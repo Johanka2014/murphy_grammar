@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Grammar Activities: Can, could, (be) able to</title>
+    <link rel="icon" href="https://static.wixstatic.com/media/0f55f2_b4662666c9b34fe58ed45b414b10cae3~mv2.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0fdf4; /* Light green theme */
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .feedback {
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            height: 1.25rem;
+        }
+        .correct {
+            color: #16a34a; /* green-600 */
+        }
+        .incorrect {
+            color: #dc2626; /* red-600 */
+        }
+        .nav-button {
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-button.active {
+            background-color: #22c55e; /* green-500 */
+            color: white;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .rule-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05);
+            border-left: 4px solid #4ade80; /* green-400 */
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="max-w-4xl mx-auto p-4 md:p-8">
+        <!-- Header Image -->
+        <header class="mb-8">
+            <img src="https://static.wixstatic.com/media/0f55f2_d0ce1f16f68b4f57ab1ee7c6337b7902~mv2.jpg" alt="Header" class="w-full h-auto rounded-lg shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/1200x300/a7f3d0/14532d?text=Header+Image';">
+        </header>
+
+        <!-- Navigation -->
+        <nav class="flex justify-center flex-wrap gap-2 mb-8 bg-white p-2 rounded-full shadow-sm">
+            <button id="nav-rules" class="nav-button active px-4 py-2 rounded-full font-semibold text-gray-600 hover:bg-green-100">Rules</button>
+            <button id="nav-activity1" class="nav-button px-4 py-2 rounded-full font-semibold text-gray-600 hover:bg-green-100">Activity 1</button>
+            <button id="nav-activity2" class="nav-button px-4 py-2 rounded-full font-semibold text-gray-600 hover:bg-green-100">Activity 2</button>
+            <button id="nav-activity3" class="nav-button px-4 py-2 rounded-full font-semibold text-gray-600 hover:bg-green-100">Activity 3</button>
+            <button id="nav-activity4" class="nav-button px-4 py-2 rounded-full font-semibold text-gray-600 hover:bg-green-100">Activity 4</button>
+            <button id="nav-activity5" class="nav-button px-4 py-2 rounded-full font-semibold text-gray-600 hover:bg-green-100">Activity 5</button>
+        </nav>
+
+        <main class="bg-green-50/50 p-6 sm:p-8 rounded-2xl shadow-lg">
+            <!-- Page 1: Rules -->
+            <div id="page-rules" class="page active">
+                <h1 class="text-3xl font-bold text-green-700 mb-6 text-center">Can, could and (be) able to</h1>
+                
+                <div class="space-y-6">
+                    <div class="rule-card">
+                        <h2 class="text-2xl font-semibold text-gray-700 mb-2">A: Using 'Can'</h2>
+                        <p class="text-gray-600 leading-relaxed">We use <span class="font-semibold text-green-600">can</span> to say that something is possible or allowed, or that somebody has the ability to do something. We use <span class="font-mono">can + infinitive</span>. The negative is <span class="font-mono text-red-500">can't</span>.</p>
+                        <p class="mt-3 pl-4 border-l-4 border-green-200 text-gray-500 italic">We <span class="font-semibold">can see</span> the lake from our hotel.</p>
+                        <p class="mt-1 pl-4 border-l-4 border-green-200 text-gray-500 italic"><span class="font-semibold">Can</span> you <span class="font-semibold">speak</span> any foreign languages?</p>
+                        <p class="mt-1 pl-4 border-l-4 border-red-200 text-gray-500 italic">I'm afraid I <span class="font-semibold">can't come</span> to the party on Friday.</p>
+                    </div>
+
+                    <div class="rule-card">
+                        <h2 class="text-2xl font-semibold text-gray-700 mb-2">B: When to use (be) able to</h2>
+                        <p class="text-gray-600 leading-relaxed"><span class="font-semibold text-green-600">(Be) able to</span> is possible instead of 'can', but 'can' is more usual. However, 'can' only has present (<span class="font-mono">can</span>) and past (<span class="font-mono">could</span>) forms, so we must use <span class="font-mono">(be) able to</span> for other tenses or forms.</p>
+                        <p class="mt-3 pl-4 border-l-4 border-green-200 text-gray-500 italic">Present Perfect: I <span class="font-semibold">haven't been able to</span> sleep recently.</p>
+                        <p class="mt-1 pl-4 border-l-4 border-green-200 text-gray-500 italic">Infinitive with 'must': Applicants must <span class="font-semibold">be able to</span> speak two languages.</p>
+                         <p class="mt-1 pl-4 border-l-4 border-green-200 text-gray-500 italic">With other modals: Tom might <span class="font-semibold">be able to</span> come tomorrow.</p>
+                    </div>
+
+                    <div class="rule-card">
+                        <h2 class="text-2xl font-semibold text-gray-700 mb-2">C: 'Could' for Past Ability</h2>
+                        <p class="text-gray-600 leading-relaxed"><span class="font-semibold text-green-600">Could</span> is the past of 'can'. We use it especially for general past ability, permission, and with verbs of perception like <span class="font-mono">see, hear, smell, taste, feel, remember, understand</span>.</p>
+                        <p class="mt-3 pl-4 border-l-4 border-green-200 text-gray-500 italic">Senses: As soon as I walked into the room, I <span class="font-semibold">could smell</span> gas.</p>
+                        <p class="mt-1 pl-4 border-l-4 border-green-200 text-gray-500 italic">General Ability: My grandfather <span class="font-semibold">could speak</span> five languages.</p>
+                        <p class="mt-1 pl-4 border-l-4 border-green-200 text-gray-500 italic">Permission: We were totally free. We <span class="font-semibold">could do</span> what we wanted.</p>
+                    </div>
+
+                    <div class="rule-card">
+                        <h2 class="text-2xl font-semibold text-gray-700 mb-2">D: 'Could' vs 'was/were able to'</h2>
+                        <p class="text-gray-600 leading-relaxed">Use <span class="font-semibold text-green-600">could</span> for general ability. To say someone succeeded in a <span class="font-semibold">specific situation</span>, use <span class="font-semibold text-green-600">was/were able to</span> or <span class="font-semibold text-green-600">managed to</span>.</p>
+                         <p class="mt-3 pl-4 border-l-4 border-green-200 text-gray-500 italic">General: Jack was an excellent tennis player. He <span class="font-semibold">could beat</span> anybody.</p>
+                         <p class="mt-1 pl-4 border-l-4 border-green-200 text-gray-500 italic">Specific: Yesterday, Jack and Andy played a match. Jack <span class="font-semibold">managed to beat</span> him.</p>
+                         <p class="mt-4 font-semibold text-gray-700">Important Exception:</p>
+                         <p class="text-gray-600 leading-relaxed">The negative, <span class="font-semibold text-red-500">couldn't</span>, can be used in ALL past situations (general and specific).</p>
+                         <p class="mt-3 pl-4 border-l-4 border-red-200 text-gray-500 italic">We looked for David everywhere, but we <span class="font-semibold">couldn't find</span> him.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 2: Activity 1 -->
+            <div id="page-activity1" class="page">
+                <h1 class="text-3xl font-bold text-green-700 mb-2">Activity 1: Fill the Gaps</h1>
+                <p class="text-gray-500 mb-6">Complete the sentences. Use <span class="font-semibold text-green-600">can</span> if possible, otherwise use <span class="font-semibold text-green-600">(be) able to</span>.</p>
+                <div class="space-y-6">
+                    <script>
+                        const activity1Data = [
+                            { qNum: 1, text: "Gary has travelled a lot. He ____ speak five languages." },
+                            { qNum: 2, text: "I ____ sleep very well recently." },
+                            { qNum: 3, text: "Nicole ____ drive, but she doesn't have a car." },
+                            { qNum: 4, text: "I used to ____ stand on my head, but I can't do it any more." },
+                            { qNum: 5, text: "I can't understand Mark. I've never ____ understand him." },
+                            { qNum: 6, text: "I can't see you on Friday, but I ____ meet you on Saturday morning." },
+                            { qNum: 7, text: "Ask Katherine about your problem. She might ____ help you." }
+                        ];
+                        activity1Data.forEach(({ qNum, text }) => {
+                            document.write(`
+                                <div>
+                                    <label for="q${qNum}-input" class="font-semibold text-gray-700">${qNum}. ${text.replace('____', '<input id="q'+qNum+'-input" type="text" class="w-40 p-1 border-b-2 border-green-300 focus:outline-none focus:border-green-500 bg-transparent">')}</label>
+                                    <div class="flex items-center">
+                                        <button onclick="checkAnswer(${qNum})" class="mt-2 px-3 py-1 bg-green-500 text-white rounded-lg hover:bg-green-600 font-semibold shadow-sm text-sm">Check</button>
+                                        <p id="q${qNum}-feedback" class="feedback ml-3"></p>
+                                    </div>
+                                </div>
+                            `);
+                        });
+                    </script>
+                </div>
+            </div>
+
+            <!-- Page 3: Activity 2 -->
+            <div id="page-activity2" class="page">
+                <h1 class="text-3xl font-bold text-green-700 mb-2">Activity 2: About You</h1>
+                <p class="text-gray-500 mb-6">Write sentences about yourself. These answers are personal and will not be checked.</p>
+                <div class="space-y-6">
+                    <div>
+                        <label class="font-semibold text-gray-700 block mb-2">1. Something you used to be able to do:</label>
+                        <textarea class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none" placeholder="I used to be able to..."></textarea>
+                    </div>
+                     <div>
+                        <label class="font-semibold text-gray-700 block mb-2">2. Something else you used to be able to do:</label>
+                        <textarea class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none" placeholder="I used to be able to..."></textarea>
+                    </div>
+                     <div>
+                        <label class="font-semibold text-gray-700 block mb-2">3. Something you would like to be able to do:</label>
+                        <textarea class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none" placeholder="I'd like to be able to..."></textarea>
+                    </div>
+                     <div>
+                        <label class="font-semibold text-gray-700 block mb-2">4. Something you have never been able to do:</label>
+                        <textarea class="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none" placeholder="I've never been able to..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Page 4: Activity 3 -->
+            <div id="page-activity3" class="page">
+                <h1 class="text-3xl font-bold text-green-700 mb-2">Activity 3: Complete the Sentence</h1>
+                <p class="text-gray-500 mb-6">Complete the sentences with <span class="font-semibold text-green-600">can, can't, could,</span> or <span class="font-semibold text-green-600">couldn't</span> and a verb from the box.</p>
+                 <div class="text-center mb-6 bg-green-50 p-3 rounded-lg ring-1 ring-green-200">
+                    <p class="font-mono text-green-700">come &nbsp;&bull;&nbsp; eat &nbsp;&bull;&nbsp; hear &nbsp;&bull;&nbsp; run &nbsp;&bull;&nbsp; sleep &nbsp;&bull;&nbsp; wait</p>
+                </div>
+                <div class="space-y-6">
+                     <script>
+                        const activity3Data = [
+                           { qNum: 8, text: "I'm afraid I ____ to your party next week." },
+                           { qNum: 9, text: "When Dan was 16, he ____ 100 metres in 11 seconds." },
+                           { qNum: 10, text: "'Are you in a hurry?' 'No, I've got plenty of time. I ____.'" },
+                           { qNum: 11, text: "I was feeling sick yesterday. I ____ anything." },
+                           { qNum: 12, text: "Can you speak a little louder? I ____ you very well." },
+                           { qNum: 13, text: "'You look tired.' 'Yes, I ____ last night.'" },
+                        ];
+                        activity3Data.forEach(({qNum, text}) => {
+                             document.write(`
+                                <div>
+                                    <label for="q${qNum}-input" class="font-semibold text-gray-700">${qNum-7}. ${text.replace('____', '<input id="q'+qNum+'-input" type="text" class="w-48 p-1 border-b-2 border-green-300 focus:outline-none focus:border-green-500 bg-transparent">')}</label>
+                                    <div class="flex items-center">
+                                        <button onclick="checkAnswer(${qNum})" class="mt-2 px-3 py-1 bg-green-500 text-white rounded-lg hover:bg-green-600 font-semibold shadow-sm text-sm">Check</button>
+                                        <p id="q${qNum}-feedback" class="feedback ml-3"></p>
+                                    </div>
+                                </div>
+                            `);
+                        });
+                     </script>
+                </div>
+            </div>
+
+            <!-- Page 5: Activity 4 -->
+            <div id="page-activity4" class="page">
+                <h1 class="text-3xl font-bold text-green-700 mb-2">Activity 4: Complete the Answers</h1>
+                <p class="text-gray-500 mb-6">Complete the answers to the questions with <span class="font-semibold text-green-600">was/were able to</span>.</p>
+                <div class="space-y-6">
+                    <script>
+                        const activity4Data = [
+                           { qNum: 14, question: "Did everybody escape from the fire?", answer: "Yes, although the fire spread quickly, everybody ____." },
+                           { qNum: 15, question: "Did you finish your work this afternoon?", answer: "Yes, there was nobody to disturb me, so I ____." },
+                           { qNum: 16, question: "Did you have problems finding our house?", answer: "Not really. Your directions were good and we ____." },
+                           { qNum: 17, question: "Did the thief get away?", answer: "Yes. No-one realised what was happening and the thief ____." }
+                        ];
+                        activity4Data.forEach(({qNum, question, answer}) => {
+                             document.write(`
+                                <div>
+                                    <p class="font-medium text-gray-500 mb-1">A: ${question}</p>
+                                    <label for="q${qNum}-input" class="font-semibold text-gray-700">B: ${answer.replace('____', '<input id="q'+qNum+'-input" type="text" class="w-48 p-1 border-b-2 border-green-300 focus:outline-none focus:border-green-500 bg-transparent">')}</label>
+                                     <div class="flex items-center">
+                                        <button onclick="checkAnswer(${qNum})" class="mt-2 px-3 py-1 bg-green-500 text-white rounded-lg hover:bg-green-600 font-semibold shadow-sm text-sm">Check</button>
+                                        <p id="q${qNum}-feedback" class="feedback ml-3"></p>
+                                    </div>
+                                </div>
+                            `);
+                        });
+                    </script>
+                </div>
+            </div>
+
+             <!-- Page 6: Activity 5 -->
+            <div id="page-activity5" class="page">
+                <h1 class="text-3xl font-bold text-green-700 mb-2">Activity 5: Specific vs. General</h1>
+                <p class="text-gray-500 mb-6">Complete the sentences using <span class="font-semibold text-green-600">could, couldn't</span> or <span class="font-semibold text-green-600">managed to</span>.</p>
+                <div class="space-y-6">
+                     <script>
+                        const activity5Data = [
+                           { qNum: 18, text: "My grandfather travelled a lot. He ____ speak five languages." },
+                           { qNum: 19, text: "I looked everywhere for the book, but I ____ find it." },
+                           { qNum: 20, text: "They didn't want to come with us at first, but we ____ persuade them." },
+                           { qNum: 21, text: "Laura had hurt her leg and ____ walk very well." },
+                           { qNum: 22, text: "I ran my first marathon recently. It was very hard, but I ____ finish." },
+                           { qNum: 23, text: "I looked very carefully and I ____ see somebody in the distance." },
+                           { qNum: 24, text: "I wanted to buy some tomatoes. The first shop I went to didn't have any, but I ____ get some in the next shop." },
+                           { qNum: 25, text: "My grandmother loved music. She ____ play the piano very well." },
+                           { qNum: 26, text: "A girl fell into the river, but fortunately we ____ pull her out." },
+                           { qNum: 27, text: "I had forgotten to bring my camera, so I ____ take any pictures." }
+                        ];
+                        activity5Data.forEach(({qNum, text}) => {
+                             document.write(`
+                                <div>
+                                    <label for="q${qNum}-input" class="font-semibold text-gray-700">${qNum - 17}. ${text.replace('____', '<input id="q'+qNum+'-input" type="text" class="w-32 p-1 border-b-2 border-green-300 focus:outline-none focus:border-green-500 bg-transparent">')}</label>
+                                     <div class="flex items-center">
+                                        <button onclick="checkAnswer(${qNum})" class="mt-2 px-3 py-1 bg-green-500 text-white rounded-lg hover:bg-green-600 font-semibold shadow-sm text-sm">Check</button>
+                                        <p id="q${qNum}-feedback" class="feedback ml-3"></p>
+                                    </div>
+                                </div>
+                            `);
+                        });
+                     </script>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // --- Data for questions and answers ---
+        const answers = {
+            1: ["can"],
+            2: ["haven't been able to"],
+            3: ["can"],
+            4: ["be able to"],
+            5: ["been able to"],
+            6: ["can", "will be able to"],
+            7: ["be able to"],
+            8: ["can't come"],
+            9: ["could run"],
+            10: ["can wait"],
+            11: ["couldn't eat"],
+            12: ["can't hear"],
+            13: ["couldn't sleep"],
+            14: ["was able to escape"],
+            15: ["was able to finish it"],
+            16: ["were able to find it"],
+            17: ["was able to get away"],
+            18: ["could"],
+            19: ["couldn't"],
+            20: ["managed to"],
+            21: ["couldn't"],
+            22: ["managed to"],
+            23: ["could"],
+            24: ["managed to"],
+            25: ["could"],
+            26: ["managed to"],
+            27: ["couldn't"]
+        };
+
+        // --- Page Navigation Logic ---
+        window.addEventListener('DOMContentLoaded', () => {
+            const pages = document.querySelectorAll('.page');
+            const navButtons = document.querySelectorAll('.nav-button');
+
+            function showPage(pageId) {
+                pages.forEach(page => page.classList.remove('active'));
+                document.getElementById(pageId)?.classList.add('active');
+
+                navButtons.forEach(button => button.classList.remove('active'));
+                const navButtonId = `nav-${pageId.split('-')[1]}`;
+                document.getElementById(navButtonId)?.classList.add('active');
+            }
+
+            document.getElementById('nav-rules').addEventListener('click', () => showPage('page-rules'));
+            document.getElementById('nav-activity1').addEventListener('click', () => showPage('page-activity1'));
+            document.getElementById('nav-activity2').addEventListener('click', () => showPage('page-activity2'));
+            document.getElementById('nav-activity3').addEventListener('click', () => showPage('page-activity3'));
+            document.getElementById('nav-activity4').addEventListener('click', () => showPage('page-activity4'));
+            document.getElementById('nav-activity5').addEventListener('click', () => showPage('page-activity5'));
+            
+            for (let i = 1; i <= Object.keys(answers).length; i++) {
+                const inputElement = document.getElementById(`q${i}-input`);
+                if (inputElement) {
+                    inputElement.addEventListener('keypress', event => {
+                        if (event.key === 'Enter') {
+                            event.preventDefault();
+                            checkAnswer(i);
+                        }
+                    });
+                }
+            }
+        });
+
+        // --- Answer Checking Logic ---
+        function checkAnswer(questionNumber) {
+            const feedbackElement = document.getElementById(`q${questionNumber}-feedback`);
+            const inputElement = document.getElementById(`q${questionNumber}-input`);
+            
+            const userAnswer = inputElement.value.toLowerCase().trim().replace(/\?$/, '').replace(/\.$/, '');
+
+            if (userAnswer === '') {
+                feedbackElement.textContent = "Please enter an answer.";
+                feedbackElement.className = "feedback incorrect";
+                inputElement.classList.add('border-red-500');
+                inputElement.classList.remove('border-green-500');
+                return;
+            }
+
+            const correctAnswers = answers[questionNumber];
+            const isCorrect = correctAnswers.includes(userAnswer);
+
+            if (isCorrect) {
+                feedbackElement.textContent = "Correct! Well done.";
+                feedbackElement.className = "feedback correct";
+                inputElement.classList.remove('border-red-500');
+                inputElement.classList.add('border-green-500');
+            } else {
+                feedbackElement.textContent = "Not quite. Check the rules and try again.";
+                feedbackElement.className = "feedback incorrect";
+                inputElement.classList.remove('border-green-500');
+                inputElement.classList.add('border-red-500');
+            }
+        }
+    </script>
+</body>
+</html>
